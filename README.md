@@ -2,7 +2,9 @@
 
 A beautiful and responsive to-do list web application with CRUD operations and local storage functionality. Features an aesthetic backdrop with a sleek, blurry interface design.
 
+![To-Do webapp screenshot](demo/initial.png)
 
+![Tasks screenshot](demo/task.png)
 
 ## ✨ Features
 
