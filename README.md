@@ -4,8 +4,6 @@ A beautiful and responsive to-do list web application with CRUD operations and l
 
 ![To-Do webapp screenshot](demo/initial.png)
 
-![Tasks screenshot](demo/task.png)
-
 ## ✨ Features
 
 - **Full CRUD Operations**: Create, Read, Update, and Delete tasks
