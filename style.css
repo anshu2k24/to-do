@@ -1,0 +1,333 @@
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: url('/backgroung2.jpg') center/cover no-repeat fixed;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    overflow-x: hidden;
+}
+
+/* Main container with glassmorphism effect */
+.main {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    padding: 40px;
+    max-width: 600px;
+    width: 100%;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.main:hover {
+    transform: translateY(-5px);
+}
+
+/* Title section */
+.title {
+    text-align: center;
+    margin-bottom: 30px;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.title h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+    background: linear-gradient(45deg, #fff, #f0f0f0);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.title h3 {
+    font-size: 1rem;
+    font-weight: 300;
+    opacity: 0.8;
+    font-style: italic;
+}
+
+/* Content section */
+.content {
+    margin-bottom: 30px;
+}
+
+/* Form styles */
+#task_form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+#new_task {
+    padding: 15px 20px;
+    border: none;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    color: white;
+    font-size: 1rem;
+    placeholder-color: rgba(255, 255, 255, 0.7);
+    transition: all 0.3s ease;
+}
+
+#new_task::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+#new_task:focus {
+    outline: none;
+    background: rgba(255, 255, 255, 0.3);
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+}
+
+/* Button styles */
+button {
+    padding: 12px 25px;
+    border: none;
+    border-radius: 12px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+}
+
+#add_btn {
+    background: rgba(76, 175, 80, 0.8);
+    color: white;
+}
+
+#add_btn:hover {
+    background: rgba(76, 175, 80, 1);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(76, 175, 80, 0.4);
+}
+
+#clear_all_btn {
+    background: rgba(244, 67, 54, 0.8);
+    color: white;
+}
+
+#clear_all_btn:hover {
+    background: rgba(244, 67, 54, 1);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(244, 67, 54, 0.4);
+}
+
+/* List styles */
+.content_list {
+    list-style: none;
+    padding: 0;
+}
+
+.content_list li {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    margin-bottom: 12px;
+    padding: 15px 20px;
+    border-radius: 12px;
+    color: white;
+    font-size: 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.content_list li:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateX(5px);
+}
+
+.content_list li:last-child {
+    margin-bottom: 0;
+}
+
+/* Task text span */
+.content_list li span {
+    flex: 1;
+    margin-right: 10px;
+    word-break: break-word;
+    min-width: 0;
+}
+
+/* Button container for edit/delete buttons */
+.content_list li .button-group {
+    display: flex;
+    gap: 8px;
+    flex-shrink: 0;
+}
+
+/* Edit and Delete buttons inside list items */
+.content_list li button {
+    padding: 6px 12px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    border-radius: 8px;
+    min-width: 60px;
+    margin: 0 !important; /* Override inline styles */
+}
+
+/* Edit button specific styling */
+.content_list li button:first-of-type {
+    background: rgba(33, 150, 243, 0.8);
+    color: white;
+}
+
+.content_list li button:first-of-type:hover {
+    background: rgba(33, 150, 243, 1);
+    transform: translateY(-1px);
+    box-shadow: 0 3px 10px rgba(33, 150, 243, 0.4);
+}
+
+/* Delete button specific styling */
+.content_list li button:last-of-type {
+    background: rgba(244, 67, 54, 0.8);
+    color: white;
+}
+
+.content_list li button:last-of-type:hover {
+    background: rgba(244, 67, 54, 1);
+    transform: translateY(-1px);
+    box-shadow: 0 3px 10px rgba(244, 67, 54, 0.4);
+}
+
+/* Alternative approach using text content selectors */
+.content_list li button[onclick*="edit"], 
+.content_list li button:not([onclick*="delete"]):not([onclick*="remove"]) {
+    background: rgba(33, 150, 243, 0.8);
+    color: white;
+}
+
+.content_list li button[onclick*="edit"]:hover, 
+.content_list li button:not([onclick*="delete"]):not([onclick*="remove"]):hover {
+    background: rgba(33, 150, 243, 1);
+    transform: translateY(-1px);
+    box-shadow: 0 3px 10px rgba(33, 150, 243, 0.4);
+}
+
+/* Footer styles */
+.foot {
+    text-align: center;
+    color: white;
+    font-style: italic;
+    opacity: 0.8;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.foot p {
+    font-size: 0.9rem;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    body {
+        padding: 15px;
+    }
+    
+    .main {
+        padding: 30px 25px;
+        margin: 10px;
+    }
+    
+    .title h1 {
+        font-size: 2rem;
+    }
+    
+    .title h3 {
+        font-size: 0.9rem;
+    }
+    
+    #task_form {
+        gap: 12px;
+    }
+    
+    #new_task {
+        padding: 12px 15px;
+        font-size: 0.9rem;
+    }
+    
+    button {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
+    
+    .content_list li {
+        padding: 12px 15px;
+        font-size: 0.9rem;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .content_list li span {
+        margin-bottom: 8px;
+        margin-right: 0;
+    }
+    
+    .content_list li button {
+        padding: 5px 10px;
+        font-size: 0.75rem;
+        min-width: 55px;
+    }
+}
+
+@media (max-width: 480px) {
+    .main {
+        padding: 25px 20px;
+    }
+    
+    .title h1 {
+        font-size: 1.8rem;
+    }
+    
+    #task_form {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    button {
+        width: 100%;
+    }
+    
+    .content_list li {
+        padding: 10px 15px;
+    }
+    
+    .content_list li button {
+        flex: 1;
+        min-width: auto;
+    }
+}
+
+/* Enhanced blur effect for better visibility */
+@supports (backdrop-filter: blur(20px)) {
+    .main {
+        background: rgba(255, 255, 255, 0.08);
+        backdrop-filter: blur(25px);
+        -webkit-backdrop-filter: blur(25px);
+    }
+}
+
+/* Fallback for browsers that don't support backdrop-filter */
+@supports not (backdrop-filter: blur(20px)) {
+    .main {
+        background: rgba(255, 255, 255, 0.9);
+    }
+}
