@@ -160,12 +160,61 @@ button {
     margin-bottom: 0;
 }
 
+/* Checkbox styling */
+.content_list li input[type="checkbox"] {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 20px;
+    height: 20px;
+    border: 2px solid rgba(255, 255, 255, 0.6);
+    border-radius: 4px;
+    background: rgba(255, 255, 255, 0.1);
+    cursor: pointer;
+    position: relative;
+    transition: all 0.3s ease;
+    flex-shrink: 0;
+}
+
+.content_list li input[type="checkbox"]:checked {
+    background: rgba(76, 175, 80, 0.8);
+    border-color: rgba(76, 175, 80, 1);
+}
+
+.content_list li input[type="checkbox"]:checked::after {
+    content: '✓';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.content_list li input[type="checkbox"]:hover {
+    border-color: rgba(255, 255, 255, 0.8);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+}
+
+.content_list li input[type="checkbox"]:checked:hover {
+    border-color: rgba(76, 175, 80, 1);
+    box-shadow: 0 0 10px rgba(76, 175, 80, 0.4);
+}
+
 /* Task text span */
 .content_list li span {
     flex: 1;
     margin-right: 10px;
     word-break: break-word;
     min-width: 0;
+    transition: all 0.3s ease;
+}
+
+/* Completed task styling */
+.content_list li span.completed {
+    text-decoration: line-through;
+    opacity: 0.6;
+    color: rgba(255, 255, 255, 0.7);
 }
 
 /* Button container for edit/delete buttons */
